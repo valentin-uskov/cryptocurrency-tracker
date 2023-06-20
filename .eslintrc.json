@@ -87,7 +87,31 @@
         ],
         "react-hooks/exhaustive-deps": ["error", {
             "additionalHooks": "useDerivedState|useCancellableAsync"
-        }]
+        }],
+        "react/function-component-definition": [
+        2,
+            {
+                "namedComponents": ["arrow-function", "function-declaration"],
+                "unnamedComponents": "arrow-function"
+            }
+        ],
+        "no-restricted-exports": "off",
+
+
+        "jsx-a11y/control-has-associated-label": [ 2,
+            {
+                "ignoreElements": [
+                    "audio",
+                    "canvas",
+                    "embed",
+                    "input",
+                    "textarea",
+                    "tr",
+                    "th",
+                    "video"
+                ]
+            }
+        ]
     },
     "env": {
         "jest": true,
@@ -114,4 +138,5 @@
             ".tsx"
         ]
     }
+
 }

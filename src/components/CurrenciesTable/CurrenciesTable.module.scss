@@ -1,0 +1,59 @@
+@import '../../variables';
+
+:local(.table) {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead tr,
+  tr:nth-of-type(even) {
+    background-color: $color-primary-light;
+  }
+
+  tr {
+    th,
+    td {
+      margin: 0;
+      padding: $spacing-regular;
+      text-align: center;
+
+      &:first-of-type {
+        width: 42px;
+      }
+
+      &:nth-of-type(2) {
+        span {
+          color: $color-text-medium;
+          padding: $spacing-small;
+        }
+      }
+
+      &:nth-of-type(3) {
+        width: 20%;
+      }
+
+    }
+  }
+}
+
+:local(.up) {
+  color: $color-success;
+
+  &::before {
+    content: '\25B2';
+    padding-right: $spacing-small;
+  }
+}
+
+:local(.down) {
+  color: $color-danger;
+
+  &::before {
+    content: '\25BC';
+    padding-right: $spacing-small;
+  }
+}
+
+:local(.emptyMessage) {
+  color: $color-text-medium;
+  text-align: center;
+}
