@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC } from 'react'
 import { useCurrencies } from '../../context/currenciesContext'
 import CurrenciesTable from '../../components/CurrenciesTable'
 import { isCurrencyInStorage } from '../../utils/isCurrencyInStorage'

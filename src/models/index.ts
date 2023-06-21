@@ -1,6 +1,6 @@
 export enum CURRENCIES {
   BTC = 'Bitcoin',
-  ETH = 'Etherium',
+  ETH = 'Ethereum',
   LTC = 'Litecoin',
   ADA = 'Cordano',
   DOGE = 'Dogecoin',

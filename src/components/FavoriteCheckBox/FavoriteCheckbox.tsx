@@ -6,7 +6,7 @@ type Props = {
   checked: boolean
   onChange: () => void
 }
-const MyComponent: FC<Props> = ({ checked, onChange }) => {
+const FavoriteCheckbox: FC<Props> = ({ checked, onChange }) => {
   const handleKeydown = (event: React.KeyboardEvent) => {
     if (event.code === 'Enter' || event.code === 'Space') {
       onChange()
@@ -39,4 +39,4 @@ const MyComponent: FC<Props> = ({ checked, onChange }) => {
   )
 }
 
-export default MyComponent
+export default FavoriteCheckbox

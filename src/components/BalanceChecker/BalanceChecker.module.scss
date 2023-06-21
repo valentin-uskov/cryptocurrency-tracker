@@ -1,0 +1,21 @@
+@import '../../variables';
+
+:local(.balance) {
+  display: block;
+  margin-top: $spacing-regular;
+}
+
+:local(.error) {
+  display: block;
+  margin-top: $spacing-regular;
+  color: $color-danger;
+}
+
+:local(.button) {
+  margin-top: $spacing-large;
+}
+
+:local(.hasError), :local(.hasError):focus {
+  border: 1px solid $color-danger;
+  outline: 1px solid $color-danger;
+}

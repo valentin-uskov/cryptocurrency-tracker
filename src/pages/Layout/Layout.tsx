@@ -3,6 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom'
 import cn from 'classnames'
 
 import css from './Layout.module.scss'
+import BalanceChecker from '../../components/BalanceChecker'
 
 const Layout: FC = () => (
   <div className={css.layout}>
@@ -18,7 +19,9 @@ const Layout: FC = () => (
     <main className={css.main}>
       <Outlet />
     </main>
-    <aside className={css.sidebar}>Sidebar here</aside>
+    <aside className={css.sidebar}>
+      <BalanceChecker />
+    </aside>
   </div>
 )
 export default Layout
