@@ -2,6 +2,7 @@
 
 :local(.layout) {
   display: flex;
+  align-items: flex-start;
   flex-wrap: wrap;
   margin: 0 auto;
 }
@@ -51,5 +52,21 @@
 
   &:hover {
     color: $color-primary;
+  }
+}
+
+@media (max-width: 1024px) {
+  :local(.sidebar) {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  :local(.main) {
+    padding: 0 $spacing-regular $spacing-large $spacing-regular;
+  }
+
+  :local(.sidebar) {
+    margin: 0 $spacing-regular;
   }
 }

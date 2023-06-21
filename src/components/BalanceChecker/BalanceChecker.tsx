@@ -37,7 +37,7 @@ const BalanceChecker: FC = () => {
       <input
         className={!isAddressValid ? css.hasError : ''}
         type="text"
-        placeholder="Enter address"
+        placeholder="Address"
         value={address}
         onChange={handleChangeInput}
       />

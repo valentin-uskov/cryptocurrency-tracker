@@ -9,6 +9,11 @@ export enum CURRENCIES {
   MATIC = 'Polygon',
   TRX = 'Tron',
   SHIB = 'Shiba Inu',
+  ATOM = 'Cosmos',
+  ICP = 'Internet Computer',
+  XMR = 'Monero',
+  AAVE = 'Aave',
+  RPL = 'Rocket Pool',
 }
 
 export type Currency = {

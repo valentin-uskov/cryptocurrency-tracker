@@ -57,3 +57,22 @@
   color: $color-text-medium;
   text-align: center;
 }
+
+:local(.nameWrapper) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+@media (max-width: 480px) {
+  :local(.table) {
+    tr {
+      th, td {
+        padding: $spacing-regular $spacing-small;
+      }
+    }
+  }
+}

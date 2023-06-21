@@ -1,0 +1,44 @@
+@import '../../variables';
+
+:local(.form) {
+  margin-top: $spacing-huge;
+
+  input {
+    margin-bottom: $spacing-regular;
+  }
+
+  h4 {
+    margin: 0;
+  }
+}
+
+:local(.helper) {
+  display: block;
+  color: $color-text-light;
+  margin: $spacing-small 0  $spacing-large 0;
+}
+
+:local(.numberInput) {
+  width: 50%;
+}
+
+:local(.error) {
+  display: block;
+  margin-top: $spacing-regular;
+  color: $color-danger;
+}
+
+:local(.success) {
+  display: block;
+  margin-top: $spacing-regular;
+  color: $color-success;
+}
+
+:local(.hasError), :local(.hasError):focus {
+  border: 1px solid $color-danger;
+  outline: 1px solid $color-danger;
+}
+
+:local(.button) {
+  margin-top: $spacing-large;
+}

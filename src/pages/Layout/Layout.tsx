@@ -4,6 +4,7 @@ import cn from 'classnames'
 
 import css from './Layout.module.scss'
 import BalanceChecker from '../../components/BalanceChecker'
+import CurrencySender from '../../components/CurrencySender'
 
 const Layout: FC = () => (
   <div className={css.layout}>
@@ -21,6 +22,7 @@ const Layout: FC = () => (
     </main>
     <aside className={css.sidebar}>
       <BalanceChecker />
+      <CurrencySender />
     </aside>
   </div>
 )

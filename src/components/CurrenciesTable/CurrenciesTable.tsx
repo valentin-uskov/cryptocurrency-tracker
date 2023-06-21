@@ -46,8 +46,10 @@ const CurrenciesTable: FC<Props> = ({ currencies }) => {
                 <FavoriteCheckbox checked={isCurrencyInStorage(symbol)} onChange={() => handleFavoriteChange(symbol)} />
               </td>
               <td>
-                <b>{name}</b>
-                <span>{symbol}</span>
+                <div className={css.nameWrapper}>
+                  <b>{name}</b>
+                  <span>{symbol}</span>
+                </div>
               </td>
               <td>{price ? <span>${convertPriceToViewFormat(price)}</span> : <Skeleton width={70} />}</td>
               <td>
