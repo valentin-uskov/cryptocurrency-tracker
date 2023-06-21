@@ -1,19 +1,28 @@
 import React, { FC, useContext, useEffect, useMemo, useState } from 'react'
 import { Currencies, CURRENCIES } from '../models'
 
-interface CurrenciesContext {
+type BinanceSocketMessage = {
+  method: 'SUBSCRIBE' | 'UNSUBSCRIBE'
+  params: string[]
+  id: number
+}
+
+type CurrenciesContext = {
   currencies: Currencies
 }
 
 const CurrenciesContext = React.createContext<CurrenciesContext>({} as CurrenciesContext)
 
-interface Props {
+type Props = {
   children: React.ReactNode
 }
 
 const initialCurrencies: Currencies = Object.keys(CURRENCIES).reduce(
-  (acc: any, symbol: string) => ({ ...acc, [symbol]: { name: CURRENCIES[symbol as keyof typeof CURRENCIES] } }),
-  {},
+  (acc, symbol) => ({
+    ...acc,
+    [symbol]: { name: CURRENCIES[symbol as keyof typeof CURRENCIES] },
+  }),
+  {} as Currencies,
 )
 
 export const CurrenciesProvider: FC<Props> = ({ children }) => {
@@ -23,7 +32,7 @@ export const CurrenciesProvider: FC<Props> = ({ children }) => {
   useEffect(() => {
     const socket = new WebSocket('wss://stream.binance.com:9443/ws')
 
-    const msg: any = {
+    const msg: BinanceSocketMessage = {
       method: 'SUBSCRIBE',
       params: Object.keys(CURRENCIES).map((symbol) => `${symbol.toLowerCase()}usdt@ticker`),
       id: 1,

@@ -11,6 +11,7 @@ import css from './CurrenciesTable.module.scss'
 type Props = {
   currencies: Currencies
 }
+
 const CurrenciesTable: FC<Props> = ({ currencies }) => {
   const handleFavoriteChange = (symbol: keyof typeof CURRENCIES) => {
     const storedSymbols = localStorage.getItem('favorite_currencies')
@@ -37,13 +38,16 @@ const CurrenciesTable: FC<Props> = ({ currencies }) => {
         </tr>
       </thead>
       <tbody>
-        {Object.keys(currencies).map((symbol: any) => {
+        {Object.keys(currencies).map((symbol) => {
           const { name, price, percentChange } = currencies[symbol as keyof typeof CURRENCIES]
 
           return (
             <tr key={symbol}>
               <td>
-                <FavoriteCheckbox checked={isCurrencyInStorage(symbol)} onChange={() => handleFavoriteChange(symbol)} />
+                <FavoriteCheckbox
+                  checked={isCurrencyInStorage(symbol as keyof typeof CURRENCIES)}
+                  onChange={() => handleFavoriteChange(symbol as keyof typeof CURRENCIES)}
+                />
               </td>
               <td>
                 <div className={css.nameWrapper}>
